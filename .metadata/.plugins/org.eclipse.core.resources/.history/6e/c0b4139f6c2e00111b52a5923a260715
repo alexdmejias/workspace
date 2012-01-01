@@ -1,0 +1,23 @@
+import java.util.Scanner;
+import java.io.File;
+import java.io.IOException;
+
+class DoPayroll {
+	public static void main(String args[]) throws IOException{
+		Scanner diskScanner =  new Scanner (new File("s.txt"));
+		
+		for (int empNum =1;empNum<=2;empNum++){
+			payOneEmployee(diskScanner);
+		}
+		
+	}
+	
+	static void payOneEmployee(Scanner aS){
+		Employee emp = new Employee();
+		
+		emp.setName(aS.nextLine());
+		emp.setJobTitle(aS.nextLine());
+		emp.cutCheck(aS.nextDouble());
+		aS.nextLine();
+	}
+}
